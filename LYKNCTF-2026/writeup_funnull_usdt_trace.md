@@ -26,21 +26,12 @@ Flag đúng:
 LYKNCTF{7e401f8004084d4bf9f792535fdf5b89138a935d027b6b75ceb2dd3ac8838fab:03/21/2025:FUNNULL TECHNOLOGY INC}
 ```
 
-## Nguồn Web Đã Dùng
-
-Writeup này được kiểm chứng bằng các trang web/explorer công khai:
-
-- Tronscan để kiểm tra dữ liệu giao dịch TRON/USDT.
-- OKLink TRON explorer để chụp ảnh giao diện transaction detail.
-- OFAC Sanctions List Search để xác nhận entity bị trừng phạt.
-
-Ghi chú: Tronscan UI bị Cloudflare/rate-limit khi chụp bằng trình duyệt headless, nên các ảnh bằng chứng chi tiết bên dưới dùng giao diện OKLink TRON explorer. OKLink vẫn là blockchain explorer UI công khai và hiển thị rõ transaction hash, ngày giờ, from/to, token contract và amount. Trang OFAC detail chụp được trực tiếp từ web.
 
 ## 1. Xác Định Chain Và Token
 
-Ảnh chụp giao diện OKLink cho giao dịch gốc:
 
-![Ảnh chụp UI giao dịch gốc trên OKLink](assets/oklink_start_tx.png)
+<img width="1500" height="1100" alt="image" src="https://github.com/user-attachments/assets/3c9ac413-3966-417d-9845-5de61d277f51" />
+
 
 Thông tin cần ghi lại:
 
@@ -80,8 +71,8 @@ TNmRfnSUXZoWWzxcDDbf95eGQYXt1mJDt8
 Mở địa chỉ này hoặc xem phần transfer liên quan trong transaction. Ta cần tìm các giao dịch USDT sau thời điểm `02/27/2025`.
 
 Các giao dịch quan trọng:
+<img width="1677" height="176" alt="image" src="https://github.com/user-attachments/assets/bc132a63-0a2d-4887-97a7-004eb67b57e6" />
 
-![Ảnh chụp UI phần TRC20 token transfers trên OKLink](assets/oklink_second_hop.png)
 
 ```text
 d4500023...e336b
@@ -117,9 +108,9 @@ Amount: 5222 USDT
 Date: 03/21/2025
 ```
 
-Ảnh chụp giao diện OKLink cho hop thứ hai:
 
-![Ảnh chụp UI hop thứ hai trên OKLink](assets/oklink_second_hop.png)
+<img width="1500" height="1100" alt="image" src="https://github.com/user-attachments/assets/56eab1ab-bcb7-48a6-84be-19e23383a6e8" />
+
 
 ## 3. Truy Vết Ví TQMq9s...
 
@@ -129,7 +120,9 @@ Tiếp tục kiểm tra ví nhận:
 TQMq9s5eqxzHW9CG4hgrWxVZaz4oZDo3tb
 ```
 
-Trên explorer, ví này nhận `5222 USDT` rồi chuyển đi gần như ngay lập tức:
+Ví này nhận `5222 USDT` rồi chuyển đi gần như ngay lập tức:
+<img width="1650" height="196" alt="image" src="https://github.com/user-attachments/assets/62f72b6e-3ad7-459a-ad60-1e1078f132d6" />
+
 
 ```text
 2ef09557180070d4bfd274f771619b062fa9a1dec5087869b45e65003256b9d9
@@ -151,9 +144,9 @@ Amount: 5222 USDT
 Date: 03/21/2025
 ```
 
-Ảnh chụp giao diện OKLink cho hop cuối:
 
-![Ảnh chụp UI hop cuối trên OKLink](assets/oklink_last_hop.png)
+<img width="1500" height="1100" alt="image" src="https://github.com/user-attachments/assets/fa76343d-118e-43a6-bec5-721038ff00f8" />
+
 
 ## 4. Vì Sao Đây Là Hop Cuối Còn Truy Vết Được
 
@@ -171,7 +164,8 @@ Bitget 9
 
 Trong ảnh OKLink của hop cuối có thể thấy giao dịch `7e401f...`, ngày `03/21/2025`, amount `5,222 USDT`, cùng nhãn Bitget ở phần from/to. Trên Tronscan, địa chỉ nhận tương ứng được gắn nhãn `Bitget 9`.
 
-![Ảnh chụp UI hop cuối trên OKLink](assets/oklink_last_hop.png)
+<img width="1500" height="1100" alt="image" src="https://github.com/user-attachments/assets/ce259124-24b1-41d0-ae31-bc50618d392a" />
+
 
 Sau khi tiền đi vào ví sàn/high-volume exchange wallet:
 
@@ -197,7 +191,8 @@ Ngày của hop này:
 
 Mở trang chi tiết của bản ghi FUNNULL trên OFAC Sanctions List Search. Ảnh chụp trang OFAC:
 
-![Ảnh chụp trang OFAC FUNNULL](assets/ofac_funnull_details.png)
+<img width="1400" height="1000" alt="image" src="https://github.com/user-attachments/assets/e15b6850-94e6-4300-a9c1-bb2b76c1f60f" />
+
 
 Trang OFAC cho thấy:
 
